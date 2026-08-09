@@ -1,4 +1,4 @@
-# ![ACM Logo](/logo.png) ACM — Auto Control Management
+# ![ACM Logo](./public/logo.png) ACM — Auto Control Management
 
 **Avtosalon uchun zamonaviy Admin Panel va Backend API.**
 
