@@ -1,11 +1,11 @@
 import React from 'react'
 
-const page = () => {
+const Deshboard = () => {
   return (
     <div>
-      sss
+      
     </div>
   )
 }
 
-export default page
+export default Deshboard

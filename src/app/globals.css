@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg-base: var(--bg-base);
+  --color-text-base: var(--text-base);
+  --color-bg-card: var(--bg-card);
+  --color-border-base: var(--border-base);
+}
+
+:root {
+  --bg-base: #f1f5f9;
+  --text-base: #0f172a;
+  --bg-card: #ffffff;
+  --border-base: #e2e8f0;
+}
+
+.dark {
+  --bg-base: #0f172a;
+  --text-base: #f8fafc;
+  --bg-card: #1e293b;
+  --border-base: #334155;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-base);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
