@@ -82,7 +82,7 @@ export default function DashboardContent() {
       <SideBar />
       <main className={`dashboard-content ${sidebarOpen ? "sidebar-expanded" : "sidebar-collapsed"}`}>
         <header className="dash-header">
-          <div><p className="dash-eyebrow">ACM boshqaruv paneli</p><h1 className="dash-title">Dashboard</h1><p className="dash-subtitle">Avtosalonning umumiy statistikasi.</p></div>
+          <div><h1 className="dash-title">Dashboard</h1></div>
           <Link href="/cars" className="dashboard-action">Avtomobillarni ko‘rish <HiOutlineArrowRight /></Link>
         </header>
 

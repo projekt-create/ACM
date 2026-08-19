@@ -83,9 +83,7 @@ export default function CarsPage() {
       <main className={`dashboard-content ${sidebarOpen ? "sidebar-expanded" : "sidebar-collapsed"}`}>
         <header className="dash-header flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <p className="dash-eyebrow">Avtosalon boshqaruvi</p>
             <h1 className="dash-title">Avtomobillar</h1>
-            <p className="dash-subtitle">Sotuvdagi barcha avtomobillar, ularning narxlari va qoldiqlari.</p>
           </div>
           <Link href="/cars/new" className="dashboard-action cursor-pointer">
             <HiOutlinePlus className="w-5 h-5" /> {"Mashina Qo'shish"}
