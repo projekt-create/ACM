@@ -21,7 +21,6 @@ const navLinks = [
   { href: "/cars", label: "Avtomobillar", icon: HiOutlineBuildingOffice2 },
   { href: "/categories", label: "Kategoriyalar", icon: HiOutlineUsers },
   { href: "/profile", label: "Profil", icon: HiOutlineUser },
-  { href: "/doc", label: "Dokumentatsiya", icon: HiOutlineDocumentText },
 ];
 
 export default function SideBar() {

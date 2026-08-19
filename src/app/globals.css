@@ -21,9 +21,8 @@
   --text: #0f172a;
   --text-muted: #64748b;
   --border: #e2e8f0;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --primary: #316ceb;
+  --primary-hover: #2a55ca;
 }
 
 .dark {
@@ -37,7 +36,6 @@
   --text: #f8fafc;
   --text-muted: #9ca3af;
   --border: #1f2937;
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3);
 }
 
 body {

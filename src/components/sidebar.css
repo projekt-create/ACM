@@ -95,20 +95,7 @@
   text-align: left;
 }
 
-.sidebar-link:hover {
-  background: var(--bg-hover);
-  color: var(--text);
-}
 
-.sidebar-link-active {
-  background: var(--primary);
-  color: #fff !important;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-.sidebar-link-active:hover {
-  background: var(--primary-hover);
-}
 
 .sidebar-link-icon {
   width: 22px;
