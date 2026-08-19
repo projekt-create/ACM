@@ -40,8 +40,10 @@ export default function AuthProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setUser(getStoredUser());
-    setIsLoading(false);
+    setTimeout(() => {
+      setUser(getStoredUser());
+      setIsLoading(false);
+    }, 0);
   }, []);
 
   const login = (response) => {

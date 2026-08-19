@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../components/sidebar.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -14,6 +15,16 @@
   --text-base: #0f172a;
   --bg-card: #ffffff;
   --border-base: #e2e8f0;
+  --bg: #f1f5f9;
+  --bg-sidebar: #ffffff;
+  --bg-hover: #f8fafc;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-dark: #1d4ed8;
+  --shadow: rgba(15, 23, 42, 0.08);
 }
 
 .dark {
@@ -21,6 +32,13 @@
   --text-base: #f8fafc;
   --bg-card: #1e293b;
   --border-base: #334155;
+  --bg: #0f172a;
+  --bg-sidebar: #1e293b;
+  --bg-hover: #334155;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --shadow: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -28,4 +46,3 @@ body {
   color: var(--text-base);
   transition: color 0.15s ease, background-color 0.15s ease;
 }
-

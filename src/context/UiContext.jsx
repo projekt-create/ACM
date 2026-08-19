@@ -8,27 +8,35 @@ export default function UIProvider({ children }) {
   const [theme, setTheme] = useState("light");
   const [lang, setLang] = useState("uz");
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme");
     const savedLang = window.localStorage.getItem("lang");
 
-    if (savedTheme === "light" || savedTheme === "dark") {
-      setTheme(savedTheme);
-    }
-    if (savedLang) {
-      setLang(savedLang);
-    }
+    setTimeout(() => {
+      if (savedTheme === "light" || savedTheme === "dark") {
+        setTheme(savedTheme);
+      }
+      if (savedLang) {
+        setLang(savedLang);
+      }
+      setHydrated(true);
+    }, 0);
   }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
-    window.localStorage.setItem("theme", theme);
-  }, [theme]);
+    if (hydrated) {
+      window.localStorage.setItem("theme", theme);
+    }
+  }, [theme, hydrated]);
 
   useEffect(() => {
-    window.localStorage.setItem("lang", lang);
-  }, [lang]);
+    if (hydrated) {
+      window.localStorage.setItem("lang", lang);
+    }
+  }, [lang, hydrated]);
 
   const toggleTheme = () => setTheme((current) => (current === "dark" ? "light" : "dark"));
   const toggleLang = () => setLang((current) => (current === "uz" ? "ru" : "uz"));
