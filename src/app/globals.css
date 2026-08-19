@@ -21,17 +21,17 @@
   --text: #0f172a;
   --text-muted: #64748b;
   --border: #e2e8f0;
-  --primary: #316ceb;
-  --primary-hover: #2a55ca;
+  --primary: #303d58;
+  --primary-hover: #19223a;
 }
 
 .dark {
   --bg-base: #090d16;
   --text-base: #f8fafc;
-  --bg-card: #111827;
+  --bg-card: #191c22;
   --border-base: #1f2937;
   --bg: #090d16;
-  --bg-sidebar: #111827;
+  --bg-sidebar: #191c22;
   --bg-hover: #1f2937;
   --text: #f8fafc;
   --text-muted: #9ca3af;

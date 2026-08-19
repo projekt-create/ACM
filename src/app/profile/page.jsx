@@ -42,9 +42,7 @@ export default function ProfilePage() {
       <SideBar />
       <main className={`dashboard-content ${sidebarOpen ? "sidebar-expanded" : "sidebar-collapsed"}`}>
         <header className="dash-header mb-6">
-          <p className="dash-eyebrow">Foydalanuvchi sozlamalari</p>
           <h1 className="dash-title">Mening Profilim</h1>
-          <p className="dash-subtitle">{"Shaxsiy profil ma'lumotlarini ko'rish va boshqarish."}</p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-5xl">
