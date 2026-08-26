@@ -164,6 +164,28 @@ export default function AdminsPage() {
     if (selectedAdmin) {
       // Edit Existing Admin
       const payload = { id: selectedAdmin.id, fullName: formData.name.trim() };
+
+      // Loginni faqat bosh admin boshqa admin uchun o'zgartira oladi.
+      if (isSuperAdmin && !isSelf) {
+        const normalizedLogin = formData.login.trim().toLowerCase();
+        if (!/^[a-z0-9._-]+$/.test(normalizedLogin)) {
+          toast.error("Login faqat lotin harflari, raqamlar, nuqta, _ yoki - dan iborat bo'lishi mumkin");
+          return;
+        }
+
+        const oldLogin = String(selectedAdmin.login || selectedAdmin.username || "").toLowerCase();
+        const loginExists = adminsList.some(
+          (admin) =>
+            String(admin.login || admin.username || "").toLowerCase() === normalizedLogin &&
+            String(admin.id) !== String(selectedAdmin.id),
+        );
+        if (loginExists) {
+          toast.error("Bu login allaqachon mavjud");
+          return;
+        }
+
+        if (normalizedLogin !== oldLogin) payload.login = normalizedLogin;
+      }
       
       // Oddiy admin o'z parolini alohida /me/password endpoint orqali almashtiradi.
       const changeOwnPassword = !isSuperAdmin && isSelf && formData.password.trim();
@@ -470,8 +492,8 @@ export default function AdminsPage() {
                   />
                 </div>
 
-                {/* Form Field: Login (Only shown when CREATING a new admin) */}
-                {!selectedAdmin && (
+                {/* Loginni yaratishda yoki bosh admin boshqa adminni tahrirlashda ko'rsatamiz */}
+                {(!selectedAdmin || (isSuperAdmin && selectedAdmin && !checkIsSelf(selectedAdmin))) && (
                   <div className="space-y-1.5">
                     <label className="text-xs font-semibold text-text-base">Foydalanuvchi Logini (@username)</label>
                     <input
