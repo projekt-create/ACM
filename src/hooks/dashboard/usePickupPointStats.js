@@ -3,11 +3,11 @@
 import { useQuery } from "@tanstack/react-query";
 import apiClient from "@/lib/apiClient";
 
-export default function useLowStock() {
+export default function usePickupPointStats() {
   return useQuery({
-    queryKey: ["DashboardLow-stock"],
+    queryKey: ["DashboardPickup-point-stats"],
     queryFn: async () => {
-      const res = await apiClient.get("api/dashboard/low-stock")
+      const res = await apiClient.get("api/dashboard/pickup-point-stats")
       return res.data
     }
   })

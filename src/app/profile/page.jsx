@@ -46,7 +46,6 @@ export default function ProfilePage() {
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-5xl">
-          {/* Card Info */}
           <div className="bg-bg-card border border-border-base rounded-xl p-6 shadow-sm flex flex-col items-center text-center lg:col-span-1">
             <div className="w-24 h-24 rounded-full bg-primary/10 text-primary flex items-center justify-center text-4xl mb-4 font-bold border border-primary/20">
               <HiOutlineUser className="w-12 h-12" />
@@ -69,7 +68,6 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Form */}
           <div className="lg:col-span-2 bg-bg-card border border-border-base rounded-xl p-6 sm:p-8 shadow-sm">
             <h3 className="text-base font-bold mb-5 pb-3 border-b border-border-base/40">{"Ma'lumotlarni tahrirlash"}</h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>

@@ -5,7 +5,10 @@ import apiClient from "@/lib/apiClient";
 
 export default function useCategoryStats() {
   return useQuery({
-    queryKey: ["dashboard", "category-stats"],
-    queryFn: async () => (await apiClient.get("/api/dashboard/category-stats")).data,
+    queryKey: ["DashboardCategory-stats"],
+    queryFn: async () => {
+      const res = await apiClient.get("api/dashboard/category-stats")
+      return res.data
+    }
   });
 }

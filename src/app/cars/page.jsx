@@ -71,27 +71,25 @@ export default function CarsPage() {
     }
   };
 
-  // Helper formatter for uzb som price
   const formatPrice = (price) => {
     if (!price && price !== 0) return "-";
     return new Intl.NumberFormat("uz-UZ", { style: "currency", currency: "UZS", maximumFractionDigits: 0 }).format(price);
   };
 
   return (
-    <div className="dashboard-shell">
+    <div className="w-full flex justify-end p-5">
       <SideBar />
-      <main className={`dashboard-content ${sidebarOpen ? "sidebar-expanded" : "sidebar-collapsed"}`}>
-        <header className="dash-header flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <main className={`transition-all duration-300 ${sidebarOpen ? "w-[calc(100%-240px)]" : "w-[calc(100%-80px)]"}`}>
+        <header className="h-16 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h1 className="dash-title">Avtomobillar</h1>
+            <h1 className="text-2xl font-bold">Avtomobillar</h1>
           </div>
-          <Link href="/cars/new" className="dashboard-action cursor-pointer">
+          <Link href="/cars/new" className="flex items-center gap-2 text-primary  h-[30px] cursor-pointer">
             <HiOutlinePlus className="w-5 h-5" /> {"Mashina Qo'shish"}
           </Link>
         </header>
 
-        {/* Filters */}
-        <section className="bg-bg-card border border-border-base rounded-xl p-4 mb-6 shadow-sm flex flex-wrap gap-4">
+          <section className="bg-bg-card border border-border-base rounded-xl p-4 mb-6 shadow-sm flex flex-wrap gap-4">
           <div className="flex-1 min-w-50">
             <label htmlFor="search" className="sr-only">Qidiruv</label>
             <input
@@ -119,9 +117,9 @@ export default function CarsPage() {
               className="w-full px-3 py-2 text-sm rounded-lg border border-border-base bg-bg-base/30 focus:border-primary focus:ring-2 focus:ring-primary/15 outline-none transition-all dark:bg-bg-base/20 cursor-pointer"
             >
               <option value="all">Barcha kategoriyalar</option>
-              {activeCategories.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.name}
+              {activeCategories.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
                 </option>
               ))}
             </select>
@@ -162,7 +160,6 @@ export default function CarsPage() {
           </div>
         </section>
 
-        {/* Cars Content */}
         {isLoading && <p className="dashboard-state">{"Avtomobillar ro'yxati yuklanmoqda..."}</p>}
         {isError && (
           <p className="dashboard-state dashboard-state-error">
@@ -177,13 +174,13 @@ export default function CarsPage() {
             ) : (
               <div className="overflow-x-auto">
                 <table className="dash-table w-full">
-                  <thead>
+                  <thead className="bg-bg-hover border-b border-border-base">
                     <tr>
-                      <th className="px-6 py-4">Avtomobil</th>
-                      <th className="px-6 py-4">Kategoriya</th>
-                      <th className="px-6 py-4">Narxi</th>
-                      <th className="px-6 py-4">Qoldiq</th>
-                      <th className="px-6 py-4">Status</th>
+                      <th className="px-6 py-4 text-start">Avtomobil</th>
+                      <th className="px-6 py-4 text-start">Kategoriya</th>
+                      <th className="px-6 py-4 text-start">Narxi</th>
+                      <th className="px-6 py-4 text-start">Qoldiq</th>
+                      <th className="px-6 py-4 text-start">Status</th>
                       <th className="px-6 py-4 text-right">Amallar</th>
                     </tr>
                   </thead>
@@ -191,7 +188,7 @@ export default function CarsPage() {
                     {carsList.map((car) => {
                       const carCategory = car.category || activeCategories.find(c => c.id === car.categoryId);
                       return (
-                        <tr key={car.id} className="hover:bg-bg-hover/80 transition-colors">
+                        <tr key={car.id} className="hover:bg-bg-hover/80 transition-colors border-b border-border-base">
                           <td className="px-6 py-4">
                             <div className="flex items-center gap-3">
                               {car.image ? (

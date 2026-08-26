@@ -156,7 +156,6 @@ export default function EditCarPage({ params }) {
                 </select>
               </div>
 
-              {/* Price */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="price" className="text-sm font-semibold text-text-base">
                   {"Narxi (so'mda) *"}
@@ -174,7 +173,6 @@ export default function EditCarPage({ params }) {
                 />
               </div>
 
-              {/* Stock */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="stock" className="text-sm font-semibold text-text-base">
                   Qoldiq (dona) *
@@ -192,7 +190,6 @@ export default function EditCarPage({ params }) {
                 />
               </div>
 
-              {/* Image URL */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="image" className="text-sm font-semibold text-text-base">
                   Rasm Havolasi (URL)
@@ -209,7 +206,6 @@ export default function EditCarPage({ params }) {
                 />
               </div>
 
-              {/* Car Description */}
               <div className="flex flex-col gap-2 md:col-span-2">
                 <label htmlFor="description" className="text-sm font-semibold text-text-base">
                   Tavsifi / Texnik xususiyatlari

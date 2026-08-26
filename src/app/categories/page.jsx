@@ -64,19 +64,18 @@ export default function CategoriesPage() {
   };
 
   return (
-    <div className="dashboard-shell">
+    <div className="w-full flex justify-end p-5">
       <SideBar />
-      <main className={`dashboard-content ${sidebarOpen ? "sidebar-expanded" : "sidebar-collapsed"}`}>
-        <header className="dash-header flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <main className={`transition-all duration-300 ${sidebarOpen ? "w-[calc(100%-240px)]" : "w-[calc(100%-80px)]"}`}>
+        <header className="h-16 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h1 className="dash-title">Kategoriyalar</h1>
+            <h1 className="text-2xl font-bold">Kategoriyalar</h1>
           </div>
-          <Link href="/categories/new" className="dashboard-action cursor-pointer">
+          <Link href="/categories/new" className="flex items-center gap-2 text-primary border border-primary rounded-lg px-4 py-2 bg-sky-700/10 hover:bg-sky-700/20 cursor-pointer">
             <HiOutlinePlus className="w-5 h-5" /> {"Kategoriya Qo'shish"}
           </Link>
         </header>
 
-        {/* Filters */}
         <section className="bg-bg-card border border-border-base rounded-xl p-4 mb-6 shadow-sm flex flex-col sm:flex-row gap-4">
           <div className="flex-1">
             <label htmlFor="search" className="sr-only">Qidiruv</label>
@@ -110,7 +109,6 @@ export default function CategoriesPage() {
           </div>
         </section>
 
-        {/* Categories Content */}
         {isLoading && <p className="dashboard-state">Kategoriyalar yuklanmoqda...</p>}
         {isError && (
           <p className="dashboard-state dashboard-state-error">
@@ -124,19 +122,19 @@ export default function CategoriesPage() {
               <p className="dashboard-state py-12">Kategoriyalar topilmadi.</p>
             ) : (
               <div className="overflow-x-auto">
-                <table className="dash-table w-full">
-                  <thead>
+                <table className="w-full">
+                  <thead className="bg-bg-base/30 dark:bg-bg-base/20 border-b border-border-base">
                     <tr>
-                      <th className="px-6 py-4">ID</th>
-                      <th className="px-6 py-4">Nomi</th>
-                      <th className="px-6 py-4">Tavsifi</th>
-                      <th className="px-6 py-4">Holati</th>
+                      <th className="px-6 py-4 text-start">ID</th>
+                      <th className="px-6 py-4 text-start">Nomi</th>
+                      <th className="px-6 py-4 text-start">Tavsifi</th>
+                      <th className="px-6 py-4 text-start">Holati</th>
                       <th className="px-6 py-4 text-right">Amallar</th>
                     </tr>
                   </thead>
                   <tbody>
                     {categoriesList.map((category) => (
-                      <tr key={category.id} className="hover:bg-bg-hover/80 transition-colors">
+                      <tr key={category.id} className="hover:bg-bg-hover/80 transition-colors border-b border-border-base">
                         <td className="px-6 py-4 text-sm font-semibold text-primary">#{category.id}</td>
                         <td className="px-6 py-4 text-sm font-semibold">{category.name}</td>
                         <td className="px-6 py-4 text-sm text-slate-500 dark:text-slate-400 max-w-xs truncate">
@@ -145,7 +143,7 @@ export default function CategoriesPage() {
                         <td className="px-6 py-4">
                           <button
                             onClick={() => handleToggleStatus(category)}
-                            className={`dash-badge cursor-pointer border-0 select-none uppercase font-bold text-[10px] tracking-wider transition-all duration-200 active:scale-95 ${
+                            className={`rounded-lg cursor-pointer border-0 select-none uppercase font-bold text-[12px] tracking-wider transition-all duration-200 active:scale-95 ${
                               category.isActive
                                 ? "bg-emerald-500/15 text-emerald-500 hover:bg-emerald-500/25"
                                 : "bg-rose-500/15 text-rose-500 hover:bg-rose-500/25"

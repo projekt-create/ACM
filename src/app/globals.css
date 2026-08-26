@@ -44,3 +44,107 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-hover);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Cyberpunk HUD & Cyber Design System */
+.cyber-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dark .cyber-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(0, 243, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.07) 1px, transparent 1px);
+}
+
+.cyber-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.8), transparent);
+}
+
+.cyber-glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.25), inset 0 0 15px rgba(0, 243, 255, 0.1);
+  border-color: rgba(0, 243, 255, 0.4);
+}
+
+.cyber-glow-magenta {
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.25), inset 0 0 15px rgba(255, 0, 128, 0.1);
+  border-color: rgba(255, 0, 128, 0.4);
+}
+
+.cyber-glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.25), inset 0 0 15px rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.cyber-glow-amber {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.25), inset 0 0 15px rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.cyber-corner {
+  position: relative;
+}
+
+.cyber-corner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid cyan;
+  border-right: 2px solid cyan;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px rgba(0, 243, 255, 0.8)); }
+  50% { opacity: 0.5; filter: drop-shadow(0 0 2px rgba(0, 243, 255, 0.3)); }
+}
+
+.cyber-pulse {
+  animation: pulseGlow 2s infinite ease-in-out;
+}

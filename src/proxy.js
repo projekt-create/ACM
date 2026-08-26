@@ -40,6 +40,7 @@ export const config = {
     "/cars/:path*",
     "/categories/:path*",
     "/profile/:path*",
+    "/admins/:path*",
     "/login",
   ],
 };

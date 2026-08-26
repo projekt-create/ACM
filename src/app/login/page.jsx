@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import useLogin from "@/hooks/auth/useLogin";
 import { useUI } from "@/context/UiContext";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
+import '@/app/globals.css'
 
 function LoginForm() {
   const router = useRouter();
@@ -62,7 +63,7 @@ function LoginForm() {
             value={form.login}
             onChange={handleChange}
             placeholder="admin"
-            className="w-full pl-10 pr-4 py-2.5 text-sm rounded-lg border border-border-base bg-bg-base/30 dark:bg-bg-base/50 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15 outline-none transition-all placeholder-slate-400 dark:placeholder-slate-500"
+            className="w-full pl-10 pr-4 py-2.5 text-sm rounded-lg border border-border-base bg-bg-base/30 dark:bg-bg-base/50 focus:border-(--primary) focus:ring-2 focus:ring-blue-500/15 outline-none transition-all placeholder-slate-400 dark:placeholder-slate-500"
             disabled={isPending}
           />
         </div>
@@ -91,7 +92,7 @@ function LoginForm() {
           />
           <button
             type="button"
-            className="absolute right-3.5 text-slate-400 hover:text-blue-500 dark:text-slate-500 transition-colors"
+            className="absolute right-3.5 text-slate-400 hover:text-(--primary) dark:text-slate-500 transition-colors"
             onClick={() => setShowPass((v) => !v)}
             tabIndex={-1}
             aria-label="Parolni ko'rsatish"
@@ -122,7 +123,7 @@ function LoginForm() {
 
       <button
         type="submit"
-        className="mt-2 w-full flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/20 dark:shadow-blue-500/5 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none select-none cursor-pointer"
+        className="mt-2 w-full flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-(--primary) to-(--secondary) text-white text-sm font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/20 dark:shadow-blue-500/5 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none select-none cursor-pointer"
         disabled={isPending}
       >
         {isPending ? (
