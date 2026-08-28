@@ -117,7 +117,6 @@ export default function EditCarPage({ params }) {
           <div className="max-w-2xl bg-bg-card border border-border-base rounded-xl p-6 sm:p-8 shadow-sm">
             <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit} noValidate>
               
-              {/* Car Name */}
               <div className="flex flex-col gap-2 md:col-span-2">
                 <label htmlFor="name" className="text-sm font-semibold text-text-base">
                   Avtomobil Nomi / Marka-Modeli *
@@ -134,7 +133,6 @@ export default function EditCarPage({ params }) {
                 />
               </div>
 
-              {/* Category selection */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="categoryId" className="text-sm font-semibold text-text-base">
                   Kategoriya *

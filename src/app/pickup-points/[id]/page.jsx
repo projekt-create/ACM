@@ -282,7 +282,6 @@ export default function PickupPointDetailPage() {
     <div className="w-full flex justify-end p-5">
       <SideBar />
       <main className={`transition-all duration-300 ${sidebarOpen ? "w-[calc(100%-240px)]" : "w-[calc(100%-80px)]"}`}>
-        {/* Header Navigation */}
         <header className="flex items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-4">
             <Link
@@ -324,7 +323,6 @@ export default function PickupPointDetailPage() {
 
         {salon && (
           <div className="space-y-6">
-            {/* Salon Stats Banner */}
             <div className="bg-bg-card border border-border-base rounded-xl p-5 shadow-sm flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-4">
                 {salon.imageUrl || salon.image ? (
@@ -381,16 +379,7 @@ export default function PickupPointDetailPage() {
                         editMode === "patch" ? "bg-primary text-white" : "text-slate-400 hover:text-slate-200"
                       }`}
                     >
-                      PATCH (Qisman)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setEditMode("put")}
-                      className={`px-3 py-1 rounded-md font-semibold transition-all border-0 cursor-pointer ${
-                        editMode === "put" ? "bg-primary text-white" : "text-slate-400 hover:text-slate-200"
-                      }`}
-                    >
-                      PUT (To'liq)
+                      PATCH 
                     </button>
                   </div>
                 </div>
