@@ -12,6 +12,7 @@ import {
   HiOutlineArrowRightOnRectangle,
   HiOutlineUser,
   HiOutlineUsers,
+  HiOutlineMapPin,
 } from "react-icons/hi2";
 import { IoCarSportSharp } from "react-icons/io5";
 
@@ -19,7 +20,8 @@ const navLinks = [
   { href: "/dashboard", label: "Dashboard", icon: HiOutlineHome },
   { href: "/cars", label: "Avtomobillar", icon: IoCarSportSharp },
   { href: "/categories", label: "Kategoriyalar", icon: HiOutlineUsers },
-  { href: "/admins", label: "Adminlar", icon:  HiOutlineUser },
+  { href: "/pickup-points", label: "Salonlar", icon: HiOutlineMapPin },
+  { href: "/admins", label: "Adminlar", icon: HiOutlineUser },
 ];
 
 export default function SideBar() {

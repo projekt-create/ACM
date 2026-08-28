@@ -63,6 +63,26 @@ body {
   background: transparent;
 }
 
+/* Dashboard Shell & Content Layout */
+.dashboard-shell {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.25rem;
+}
+
+.dashboard-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-content.sidebar-expanded {
+  width: calc(100% - 240px);
+}
+
+.dashboard-content.sidebar-collapsed {
+  width: calc(100% - 80px);
+}
+
 /* Cyberpunk HUD & Cyber Design System */
 .cyber-grid-bg {
   background-image: 
